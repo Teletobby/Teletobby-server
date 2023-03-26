@@ -1,7 +1,11 @@
 package com.project.shoppingmall.dto;
+import com.project.shoppingmall.entity.BaseTime;
+import lombok.Getter;
+
 import java.util.Date;
 
-public class GroupDto {
+@Getter
+public class GroupDTO extends BaseTime {
         private Integer g_id;
         private String g_title;
         private String g_name;

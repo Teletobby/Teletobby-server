@@ -1,6 +1,10 @@
 package com.project.shoppingmall.dto;
 
-public class BorrowDto {
+import com.project.shoppingmall.entity.BaseTime;
+import lombok.Getter;
+
+@Getter
+public class BorrowDTO extends BaseTime {
     private Integer b_id;
     private String b_name;
     private Integer b_price;

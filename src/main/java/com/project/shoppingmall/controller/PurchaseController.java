@@ -25,7 +25,7 @@ public class PurchaseController {
     }
 
     // 구매 해당 게시글 보여주기
-    @GetMapping("/purchase/view/{p_id}")
+    @GetMapping("/purchase/post/{p_id}")
     public ResponseEntity<Purchase> findPurchase(@PathVariable("p_id") Integer p_id){
         Purchase purchase = purchaseService.findPost(p_id);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
@@ -48,8 +48,7 @@ public class PurchaseController {
     // 구매 게시글 수정하기
     @PutMapping("/purchase/alter/{p_id}")
     public ResponseEntity<Purchase> alterPurchase(@PathVariable("p_id") Integer p_id, @RequestBody PurchaseDTO purchaseDTO){
-        Purchase purchase = purchaseService.alterPost(
-                p_id, purchaseDTO);
+        Purchase purchase = purchaseService.alterPost(p_id, purchaseDTO);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
     }
 }
