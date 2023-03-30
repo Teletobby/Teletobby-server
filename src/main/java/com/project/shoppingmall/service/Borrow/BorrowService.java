@@ -19,7 +19,6 @@ public class BorrowService implements BorrowServiceImpl {
     public Borrow savePosts(BorrowDTO borrowDto) {
         Borrow borrow = new Borrow();
 
-        borrow.setB_id(borrowDto.getB_id());
         borrow.setB_name(borrowDto.getB_name());
         borrow.setB_period(borrowDto.getB_period());
         borrow.setB_price(borrowDto.getB_price());

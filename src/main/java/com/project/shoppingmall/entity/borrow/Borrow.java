@@ -1,11 +1,9 @@
 package com.project.shoppingmall.entity.borrow;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.project.shoppingmall.entity.BaseTime;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @RequiredArgsConstructor

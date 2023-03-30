@@ -5,7 +5,6 @@ import lombok.Getter;
 
 @Getter
 public class BorrowDTO extends BaseTime {
-    private Integer b_id;
     private String b_name;
     private Integer b_price;
     private String b_writer;

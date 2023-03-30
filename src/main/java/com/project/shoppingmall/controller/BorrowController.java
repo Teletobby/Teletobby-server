@@ -17,8 +17,8 @@ public class BorrowController {
     private final BorrowService borrowService;
 
     @PostMapping("/borrow/save")
-    public ResponseEntity<Borrow> savePosts(@RequestBody BorrowDTO borrowDto){
-        Borrow borrow = borrowService.savePosts(borrowDto);
+    public ResponseEntity<Borrow> savePosts(@RequestBody BorrowDTO borrowDTO){
+        Borrow borrow = borrowService.savePosts(borrowDTO);
         return ResponseEntity.status(HttpStatus.OK).body(borrow);
     }
 
@@ -29,9 +29,9 @@ public class BorrowController {
     }
 
     @GetMapping("/borrow/list")
-    public ResponseEntity<Borrow> findAllPosts(){
+    public ResponseEntity<List<Borrow>> findAllPosts(){
         List<Borrow> borrows = borrowService.findAllPosts();
-        return (ResponseEntity<Borrow>) borrows;
+        return ResponseEntity.status(HttpStatus.OK).body(borrows);
     }
 
     @DeleteMapping("/borrow/delete/{b_id}")

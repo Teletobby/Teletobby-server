@@ -14,7 +14,4 @@ public interface BorrowServiceImpl {
     void deletePosts(Integer b_id);
 
     Borrow alterPosts(Integer b_id, BorrowDTO borrowDto);
-
-
-
 }

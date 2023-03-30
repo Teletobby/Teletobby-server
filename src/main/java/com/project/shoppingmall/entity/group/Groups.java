@@ -26,8 +26,6 @@ public class Groups extends BaseTime {
     private Integer g_member;
     @Column(nullable = false)
     private Date g_dueDate;
-    @Column
-    private LocalDateTime g_createDate;
-    @Column
+    @Column(nullable = false)
     private String g_address;
 }
