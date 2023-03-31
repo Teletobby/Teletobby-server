@@ -1,6 +1,6 @@
 package com.project.shoppingmall.service.Purchase;
 
-import com.project.shoppingmall.dto.PurchaseDTO;
+import com.project.shoppingmall.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.purchase.Purchase;
 import com.project.shoppingmall.repository.PurchaseRepository;
 import com.project.shoppingmall.service.Purchase.impl.PurchaseServiceImpl;

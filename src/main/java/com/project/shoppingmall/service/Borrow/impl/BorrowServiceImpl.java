@@ -1,6 +1,6 @@
 package com.project.shoppingmall.service.Borrow.impl;
 
-import com.project.shoppingmall.dto.BorrowDTO;
+import com.project.shoppingmall.dto.borrow.BorrowDTO;
 import com.project.shoppingmall.entity.borrow.Borrow;
 
 import java.util.List;

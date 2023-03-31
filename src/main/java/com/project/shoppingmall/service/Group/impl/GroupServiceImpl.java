@@ -1,6 +1,6 @@
 package com.project.shoppingmall.service.Group.impl;
 
-import com.project.shoppingmall.dto.GroupDTO;
+import com.project.shoppingmall.dto.group.GroupDTO;
 import com.project.shoppingmall.entity.group.Groups;
 
 import java.util.List;

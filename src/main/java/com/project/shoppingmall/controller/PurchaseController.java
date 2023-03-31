@@ -1,10 +1,11 @@
 package com.project.shoppingmall.controller;
 
-import com.project.shoppingmall.dto.PurchaseDTO;
+import com.project.shoppingmall.dto.EnrollDTO;
+import com.project.shoppingmall.dto.purchase.PurchaseDTO;
+import com.project.shoppingmall.entity.borrow.EnrollBorrow;
 import com.project.shoppingmall.entity.purchase.Purchase;
 import com.project.shoppingmall.service.Purchase.PurchaseService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -47,7 +48,7 @@ public class PurchaseController {
 
     // 구매 게시글 수정하기
     @PutMapping("/purchase/alter/{p_id}")
-    public ResponseEntity<Purchase> alterPurchase(@PathVariable("p_id") Integer p_id, @RequestBody PurchaseDTO purchaseDTO){
+    public ResponseEntity<Purchase> alterPurchase(@PathVariable("p_id") Integer p_id, @RequestBody PurchaseDTO purchaseDTO) {
         Purchase purchase = purchaseService.alterPost(p_id, purchaseDTO);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
     }

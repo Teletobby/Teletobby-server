@@ -1,6 +1,6 @@
 package com.project.shoppingmall.service.Purchase.impl;
 
-import com.project.shoppingmall.dto.PurchaseDTO;
+import com.project.shoppingmall.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.purchase.Purchase;
 
 import java.util.List;

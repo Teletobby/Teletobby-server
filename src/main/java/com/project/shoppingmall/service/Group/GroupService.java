@@ -1,6 +1,6 @@
 package com.project.shoppingmall.service.Group;
 
-import com.project.shoppingmall.dto.GroupDTO;
+import com.project.shoppingmall.dto.group.GroupDTO;
 import com.project.shoppingmall.entity.group.Groups;
 import com.project.shoppingmall.repository.GroupRepository;
 import com.project.shoppingmall.service.Group.impl.GroupServiceImpl;
