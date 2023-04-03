@@ -1,8 +1,11 @@
 package com.project.shoppingmall.service.Purchase;
 
+import com.project.shoppingmall.dto.EnrollDTO;
 import com.project.shoppingmall.dto.purchase.PurchaseDTO;
+import com.project.shoppingmall.entity.purchase.EnrollPurchase;
 import com.project.shoppingmall.entity.purchase.Purchase;
-import com.project.shoppingmall.repository.PurchaseRepository;
+import com.project.shoppingmall.repository.Purchase.EnrollPurchaseRepository;
+import com.project.shoppingmall.repository.Purchase.PurchaseRepository;
 import com.project.shoppingmall.service.Purchase.impl.PurchaseServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PurchaseService implements PurchaseServiceImpl {
     private final PurchaseRepository purchaseRepository;
+    private final EnrollPurchaseRepository enrollRepository;
     @Override
     public Purchase savePost(PurchaseDTO purchaseDTO) {
         Purchase purchase = new Purchase();
@@ -52,4 +56,17 @@ public class PurchaseService implements PurchaseServiceImpl {
         return purchase;
     }
 
+    public EnrollPurchase saveEnroll(EnrollDTO enrollDTO, Integer p_id) {
+        EnrollPurchase enroll = new EnrollPurchase();
+        enroll.setE_name(enrollDTO.getE_name());
+        enroll.setE_phone(enrollDTO.getE_phone());
+        EnrollPurchase enrollPurchase = enrollRepository.save(enroll);
+        return enrollPurchase;
+    }
+
+    @Override
+    public List<EnrollPurchase> findEnroll() {
+        List<EnrollPurchase> enrollPurchase = (List<EnrollPurchase>) enrollRepository.findAll();
+        return enrollPurchase;
+    }
 }

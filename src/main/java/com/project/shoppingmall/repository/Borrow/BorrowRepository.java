@@ -1,4 +1,4 @@
-package com.project.shoppingmall.repository;
+package com.project.shoppingmall.repository.Borrow;
 
 import com.project.shoppingmall.entity.borrow.Borrow;
 import org.springframework.data.repository.CrudRepository;

@@ -2,7 +2,7 @@ package com.project.shoppingmall.service.Borrow;
 
 import com.project.shoppingmall.dto.borrow.BorrowDTO;
 import com.project.shoppingmall.entity.borrow.Borrow;
-import com.project.shoppingmall.repository.BorrowRepository;
+import com.project.shoppingmall.repository.Borrow.BorrowRepository;
 import com.project.shoppingmall.service.Borrow.impl.BorrowServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

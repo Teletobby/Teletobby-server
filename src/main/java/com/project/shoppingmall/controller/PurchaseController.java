@@ -3,9 +3,12 @@ package com.project.shoppingmall.controller;
 import com.project.shoppingmall.dto.EnrollDTO;
 import com.project.shoppingmall.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.borrow.EnrollBorrow;
+import com.project.shoppingmall.entity.purchase.EnrollPurchase;
 import com.project.shoppingmall.entity.purchase.Purchase;
 import com.project.shoppingmall.service.Purchase.PurchaseService;
 import lombok.AllArgsConstructor;
+import org.apache.catalina.webresources.EmptyResource;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,11 +28,17 @@ public class PurchaseController {
         return ResponseEntity.status(HttpStatus.OK).body(savedPurchase);
     }
 
-    // 구매 해당 게시글 보여주기
+    // 구매 해당 게시글 보여주기 및 신청 저장
     @GetMapping("/purchase/post/{p_id}")
     public ResponseEntity<Purchase> findPurchase(@PathVariable("p_id") Integer p_id){
         Purchase purchase = purchaseService.findPost(p_id);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
+    }
+
+    @PostMapping("/purchase/post/{p_id}")
+    public ResponseEntity<String> enrollPurchase(@PathVariable("p_id") Integer p_id, @RequestBody EnrollDTO enrollDTO){
+        purchaseService.saveEnroll(enrollDTO, p_id);
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 등록되었습니다");
     }
 
     // 구매 전체 게시글 보여주기
@@ -52,4 +61,11 @@ public class PurchaseController {
         Purchase purchase = purchaseService.alterPost(p_id, purchaseDTO);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
     }
+
+    @GetMapping("/purchase/enroll/list")
+    public ResponseEntity<List<EnrollPurchase>> findEnrollPurchase(){
+        List<EnrollPurchase> enrollList = purchaseService.findEnroll();
+        return ResponseEntity.status(HttpStatus.OK).body(enrollList);
+    }
+
 }

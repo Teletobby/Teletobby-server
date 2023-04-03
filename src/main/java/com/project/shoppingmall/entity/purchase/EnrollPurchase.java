@@ -16,8 +16,8 @@ public class EnrollPurchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer e_seq;
     @ManyToOne
-    @JoinColumn(name="p_id")
-    private Purchase e_id;
+    @JoinColumn(name="e_id")
+    private Purchase p_id;
     @Column(nullable = false)
     private String e_name;
     @Column(nullable = false)
