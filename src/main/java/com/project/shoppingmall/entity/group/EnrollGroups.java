@@ -22,4 +22,9 @@ public class EnrollGroups {
     private String e_name;
     @Column(nullable = false)
     private String e_phone;
+
+
+
 }
+
+

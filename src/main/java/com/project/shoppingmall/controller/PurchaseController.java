@@ -28,17 +28,11 @@ public class PurchaseController {
         return ResponseEntity.status(HttpStatus.OK).body(savedPurchase);
     }
 
-    // 구매 해당 게시글 보여주기 및 신청 저장
+    // 구매 해당 게시글 보기
     @GetMapping("/purchase/post/{p_id}")
     public ResponseEntity<Purchase> findPurchase(@PathVariable("p_id") Integer p_id){
         Purchase purchase = purchaseService.findPost(p_id);
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
-    }
-
-    @PostMapping("/purchase/post/{p_id}")
-    public ResponseEntity<String> enrollPurchase(@PathVariable("p_id") Integer p_id, @RequestBody EnrollDTO enrollDTO){
-        purchaseService.saveEnroll(enrollDTO, p_id);
-        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 등록되었습니다");
     }
 
     // 구매 전체 게시글 보여주기
@@ -48,13 +42,6 @@ public class PurchaseController {
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
     }
 
-    // 구매 해당 게시글 삭제
-    @DeleteMapping("/purchase/delete/{p_id}")
-    public ResponseEntity<String> deletePurchase(@PathVariable("p_id") Integer p_id){
-        purchaseService.deletePost(p_id);
-        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제 되었습니다");
-    }
-
     // 구매 게시글 수정하기
     @PutMapping("/purchase/alter/{p_id}")
     public ResponseEntity<Purchase> alterPurchase(@PathVariable("p_id") Integer p_id, @RequestBody PurchaseDTO purchaseDTO) {
@@ -62,10 +49,19 @@ public class PurchaseController {
         return ResponseEntity.status(HttpStatus.OK).body(purchase);
     }
 
-    @GetMapping("/purchase/enroll/list")
-    public ResponseEntity<List<EnrollPurchase>> findEnrollPurchase(){
-        List<EnrollPurchase> enrollList = purchaseService.findEnroll();
-        return ResponseEntity.status(HttpStatus.OK).body(enrollList);
+    // 구매 해당 게시글 삭제
+    @DeleteMapping("/purchase/delete/{p_id}")
+    public ResponseEntity<String> deletePurchase(@PathVariable("p_id") Integer p_id) {
+        purchaseService.deletePost(p_id);
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제 되었습니다");
+    }
+
+
+    // 구매 신청하기
+    @PostMapping("/purchase/post/{p_id}")
+    public ResponseEntity<String> enrollPurchase(@PathVariable("p_id") Purchase p_id, @RequestBody EnrollDTO enrollDTO){
+        purchaseService.saveEnroll(enrollDTO, p_id);
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 등록되었습니다");
     }
 
 }

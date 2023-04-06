@@ -16,6 +16,4 @@ public interface PurchaseServiceImpl {
     void deletePost(Integer p_id);
 
     Purchase alterPost(Integer p_id, PurchaseDTO purchaseDTO);
-
-    List<EnrollPurchase> findEnroll();
 }

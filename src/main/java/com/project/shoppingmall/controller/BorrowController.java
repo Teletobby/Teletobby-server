@@ -37,13 +37,6 @@ public class BorrowController {
         return ResponseEntity.status(HttpStatus.OK).body(borrows);
     }
 
-    // 게시글 삭제
-    @DeleteMapping("/borrow/delete/{b_id}")
-    public ResponseEntity<String> deletePosts(@PathVariable("b_id") Integer b_id){
-        borrowService.deletePosts(b_id);
-        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제 되었습니다.");
-    }
-
     // 게시글 수정
     @PutMapping("/borrow/alter/{b_id}")
     public ResponseEntity<Borrow> alterPosts(@PathVariable("b_id") Integer b_id, BorrowDTO borrowDTO){
@@ -51,6 +44,20 @@ public class BorrowController {
         return ResponseEntity.status(HttpStatus.OK).body(borrow);
     }
 
+    // 게시글 삭제
+    @DeleteMapping("/borrow/delete/{b_id}")
+    public ResponseEntity<String> deletePosts(@PathVariable("b_id") Integer b_id){
+        borrowService.deletePosts(b_id);
+        return ResponseEntity.status(HttpStatus.OK).body("정상적으로 삭제 되었습니다.");
+    }
+
+    // 대여 신청
+
+    // 대여 신청 리스트
+
+    // 대여 신청 수정
+
+    // 게시물 하트
 
 
 
