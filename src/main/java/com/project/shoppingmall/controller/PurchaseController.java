@@ -64,4 +64,18 @@ public class PurchaseController {
         return ResponseEntity.status(HttpStatus.OK).body("정상적으로 등록되었습니다");
     }
 
+    // 구매 신청 리스트
+    @GetMapping("/purchase/enroll/list")
+    public ResponseEntity<List<EnrollPurchase>> findEnrollPurchase(){
+        List<EnrollPurchase> enrollList = purchaseService.findEnroll();
+        return ResponseEntity.status(HttpStatus.OK).body(enrollList);
+    }
+
+    // 구매 신청 수정하기
+    @PutMapping("/purchase/enroll/alter/{p_id}")
+    public ResponseEntity<EnrollPurchase> alterEnroll(@PathVariable("p_id") Integer p_id, @RequestBody EnrollDTO enrollDTO){
+        EnrollPurchase enrollPurchase = purchaseService.alterEnroll(p_id, enrollDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(enrollPurchase);
+    }
+
 }

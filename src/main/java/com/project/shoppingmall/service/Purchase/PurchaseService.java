@@ -64,4 +64,20 @@ public class PurchaseService implements PurchaseServiceImpl {
         EnrollPurchase saveEnroll = enrollRepository.save(enroll);
         return saveEnroll;
     }
+
+    @Override
+    public List<EnrollPurchase> findEnroll() {
+        List<EnrollPurchase> findEnroll = (List<EnrollPurchase>) enrollRepository.findAll();
+        return findEnroll;
+    }
+
+    @Override
+    public EnrollPurchase alterEnroll(Integer p_id, EnrollDTO enrollDTO) {
+        EnrollPurchase enrollPurchase =  enrollRepository.findById(p_id).get();;
+        enrollPurchase.setE_name(enrollDTO.getE_name());
+        enrollPurchase.setE_phone(enrollDTO.getE_phone());
+        EnrollPurchase alterEnroll = enrollRepository.save(enrollPurchase);
+        return alterEnroll;
+    }
+
 }
