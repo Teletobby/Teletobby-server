@@ -1,4 +1,4 @@
-package com.project.shoppingmall.dto.purchase;
+package com.project.shoppingmall.controller.dto.purchase;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import com.project.shoppingmall.entity.BaseTime;

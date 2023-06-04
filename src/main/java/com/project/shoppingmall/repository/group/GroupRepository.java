@@ -1,4 +1,4 @@
-package com.project.shoppingmall.repository.Group;
+package com.project.shoppingmall.repository.group;
 
 import com.project.shoppingmall.entity.group.Groups;
 import org.springframework.data.repository.CrudRepository;

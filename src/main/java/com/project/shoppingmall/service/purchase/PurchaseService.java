@@ -1,12 +1,12 @@
-package com.project.shoppingmall.service.Purchase;
+package com.project.shoppingmall.service.purchase;
 
-import com.project.shoppingmall.dto.EnrollDTO;
-import com.project.shoppingmall.dto.purchase.PurchaseDTO;
+import com.project.shoppingmall.controller.dto.EnrollDTO;
+import com.project.shoppingmall.controller.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.purchase.EnrollPurchase;
 import com.project.shoppingmall.entity.purchase.Purchase;
-import com.project.shoppingmall.repository.Purchase.EnrollPurchaseRepository;
-import com.project.shoppingmall.repository.Purchase.PurchaseRepository;
-import com.project.shoppingmall.service.Purchase.impl.PurchaseServiceImpl;
+import com.project.shoppingmall.repository.purchase.EnrollPurchaseRepository;
+import com.project.shoppingmall.repository.purchase.PurchaseRepository;
+import com.project.shoppingmall.service.purchase.impl.PurchaseServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

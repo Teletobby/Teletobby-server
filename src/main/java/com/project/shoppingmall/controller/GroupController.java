@@ -1,8 +1,8 @@
 package com.project.shoppingmall.controller;
 
-import com.project.shoppingmall.dto.group.GroupDTO;
+import com.project.shoppingmall.controller.dto.group.GroupDTO;
 import com.project.shoppingmall.entity.group.Groups;
-import com.project.shoppingmall.service.Group.GroupService;
+import com.project.shoppingmall.service.group.GroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

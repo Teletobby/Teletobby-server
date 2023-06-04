@@ -1,4 +1,4 @@
-package com.project.shoppingmall.repository.Purchase;
+package com.project.shoppingmall.repository.purchase;
 
 import com.project.shoppingmall.entity.purchase.Purchase;
 import org.springframework.data.repository.CrudRepository;

@@ -1,4 +1,4 @@
-package com.project.shoppingmall.dto.group;
+package com.project.shoppingmall.controller.dto.group;
 import com.project.shoppingmall.entity.BaseTime;
 import lombok.Getter;
 import lombok.Setter;

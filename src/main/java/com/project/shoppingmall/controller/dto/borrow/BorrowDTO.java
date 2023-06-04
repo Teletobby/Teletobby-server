@@ -1,4 +1,4 @@
-package com.project.shoppingmall.dto.borrow;
+package com.project.shoppingmall.controller.dto.borrow;
 
 import com.project.shoppingmall.entity.BaseTime;
 import lombok.Getter;

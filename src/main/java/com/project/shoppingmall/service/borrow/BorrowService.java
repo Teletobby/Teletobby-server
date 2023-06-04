@@ -1,9 +1,12 @@
-package com.project.shoppingmall.service.Borrow;
+package com.project.shoppingmall.service.borrow;
 
-import com.project.shoppingmall.dto.borrow.BorrowDTO;
+import com.project.shoppingmall.controller.dto.EnrollDTO;
+import com.project.shoppingmall.controller.dto.borrow.BorrowDTO;
 import com.project.shoppingmall.entity.borrow.Borrow;
-import com.project.shoppingmall.repository.Borrow.BorrowRepository;
-import com.project.shoppingmall.service.Borrow.impl.BorrowServiceImpl;
+import com.project.shoppingmall.entity.borrow.EnrollBorrow;
+import com.project.shoppingmall.repository.borrow.BorrowRepository;
+import com.project.shoppingmall.repository.borrow.EnrollBorrowRepository;
+import com.project.shoppingmall.service.borrow.impl.BorrowServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,7 @@ import java.util.List;
 public class BorrowService implements BorrowServiceImpl {
 
     private final BorrowRepository borrowRepository;
+    private final EnrollBorrowRepository enrollBorrowRepository;
 
     @Override
     public Borrow savePosts(BorrowDTO borrowDto) {
@@ -58,5 +62,29 @@ public class BorrowService implements BorrowServiceImpl {
         return alterPost;
     }
 
+    @Override
+    public EnrollBorrow saveEnroll(EnrollDTO enrollDTO, Borrow e_id) {
+        EnrollBorrow enroll = new EnrollBorrow();
+        enroll.setE_id(e_id);
+        enroll.setE_name(enrollDTO.getE_name());
+        enroll.setE_phone(enrollDTO.getE_phone());
+        EnrollBorrow saveEnroll = enrollBorrowRepository.save(enroll);
+        return saveEnroll;
+    }
+
+    @Override
+    public List<EnrollBorrow> findEnroll() {
+        List<EnrollBorrow> findEnroll = (List<EnrollBorrow>) enrollBorrowRepository.findAll();
+        return findEnroll;
+    }
+
+    @Override
+    public EnrollBorrow alterEnroll(Integer p_id, EnrollDTO enrollDTO) {
+        EnrollBorrow enrollBorrow =  enrollBorrowRepository.findById(p_id).get();;
+        enrollBorrow.setE_name(enrollDTO.getE_name());
+        enrollBorrow.setE_phone(enrollDTO.getE_phone());
+        EnrollBorrow alterEnroll = enrollBorrowRepository.save(enrollBorrow);
+        return alterEnroll;
+    }
 
 }

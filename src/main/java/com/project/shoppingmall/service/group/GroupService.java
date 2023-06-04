@@ -1,9 +1,12 @@
-package com.project.shoppingmall.service.Group;
+package com.project.shoppingmall.service.group;
 
-import com.project.shoppingmall.dto.group.GroupDTO;
+import com.project.shoppingmall.controller.dto.EnrollDTO;
+import com.project.shoppingmall.controller.dto.group.GroupDTO;
+import com.project.shoppingmall.entity.group.EnrollGroups;
 import com.project.shoppingmall.entity.group.Groups;
-import com.project.shoppingmall.repository.Group.GroupRepository;
-import com.project.shoppingmall.service.Group.impl.GroupServiceImpl;
+import com.project.shoppingmall.repository.group.EnrollGroupRepository;
+import com.project.shoppingmall.repository.group.GroupRepository;
+import com.project.shoppingmall.service.group.impl.GroupServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +21,7 @@ import java.util.List;
 public class GroupService implements GroupServiceImpl {
 
     private final GroupRepository groupRepository;
+    private final EnrollGroupRepository enrollGroupRepository;
 
 
     @Override
@@ -61,5 +65,29 @@ public class GroupService implements GroupServiceImpl {
     @Override
     public void deletePosts(Integer g_id) {
         groupRepository.deleteById(g_id);
+    }
+
+    @Override
+    public EnrollGroups saveEnroll(EnrollDTO enrollDTO, Groups g_id) {
+        EnrollGroups enroll = new EnrollGroups();
+        enroll.setE_id(g_id);
+        enroll.setE_name(enrollDTO.getE_name());
+        enroll.setE_phone(enrollDTO.getE_phone());
+        EnrollGroups saveEnroll = enrollGroupRepository.save(enroll);
+        return saveEnroll;
+    }
+    @Override
+    public List<EnrollGroups> findEnroll() {
+        List<EnrollGroups> findEnroll = (List<EnrollGroups>) enrollGroupRepository.findAll();
+        return findEnroll;
+    }
+
+    @Override
+    public EnrollGroups alterEnroll(Integer p_id, EnrollDTO enrollDTO) {
+        EnrollGroups enrollGroups =  enrollGroupRepository.findById(p_id).get();;
+        enrollGroups.setE_name(enrollDTO.getE_name());
+        enrollGroups.setE_phone(enrollDTO.getE_phone());
+        EnrollGroups alterEnroll = enrollGroupRepository.save(enrollGroups);
+        return alterEnroll;
     }
 }

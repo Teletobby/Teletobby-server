@@ -1,7 +1,7 @@
-package com.project.shoppingmall.service.Purchase.impl;
+package com.project.shoppingmall.service.purchase.impl;
 
-import com.project.shoppingmall.dto.EnrollDTO;
-import com.project.shoppingmall.dto.purchase.PurchaseDTO;
+import com.project.shoppingmall.controller.dto.EnrollDTO;
+import com.project.shoppingmall.controller.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.purchase.EnrollPurchase;
 import com.project.shoppingmall.entity.purchase.Purchase;
 

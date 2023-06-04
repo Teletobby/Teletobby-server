@@ -1,14 +1,10 @@
 package com.project.shoppingmall.controller;
 
-import com.project.shoppingmall.dto.EnrollDTO;
-import com.project.shoppingmall.dto.purchase.PurchaseDTO;
-import com.project.shoppingmall.entity.borrow.EnrollBorrow;
-import com.project.shoppingmall.entity.purchase.EnrollPurchase;
+import com.project.shoppingmall.controller.dto.EnrollDTO;
+import com.project.shoppingmall.controller.dto.purchase.PurchaseDTO;
 import com.project.shoppingmall.entity.purchase.Purchase;
-import com.project.shoppingmall.service.Purchase.PurchaseService;
+import com.project.shoppingmall.service.purchase.PurchaseService;
 import lombok.AllArgsConstructor;
-import org.apache.catalina.webresources.EmptyResource;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

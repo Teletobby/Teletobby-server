@@ -1,8 +1,8 @@
 package com.project.shoppingmall.controller;
 
-import com.project.shoppingmall.dto.borrow.BorrowDTO;
+import com.project.shoppingmall.controller.dto.borrow.BorrowDTO;
 import com.project.shoppingmall.entity.borrow.Borrow;
-import com.project.shoppingmall.service.Borrow.BorrowService;
+import com.project.shoppingmall.service.borrow.BorrowService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
